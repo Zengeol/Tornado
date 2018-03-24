@@ -4,7 +4,7 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self): #'get' will handle the request
         # if it's post(self), it is a post request
         self.set_header("Content-Type", 'text/plain')
-        self.write("Hello, world")
+        self.write("Hello, {}".format(name))
 
 def make_app():# this URL matches with this handle
     return tornado.web.Application([

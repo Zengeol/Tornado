@@ -12,5 +12,6 @@ def make_app():# this URL matches with this handle
     ], autoreload=True)
 if __name__ == "__main__":
     app = make_app()
-    app.listen(8888) # post it on port 8888
+    PORT = int(os.environ.get('PORT','9999'))
+    app.listen(PORT) # post it on port 8888
     tornado.ioloop.IOLoop.current().start()
